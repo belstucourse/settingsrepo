@@ -11,3 +11,10 @@ zuul:
       service-id: auth-service
       strip-prefix: false
       sensitive-headers: Cookie,Set-Cookie
+security:
+  jwt:
+    uri: /auth/**
+    header: Authorization
+    prefix: Bearer
+    expiration: 34560
+    secret: JwtSecretKey
